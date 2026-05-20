@@ -1507,6 +1507,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.8, y: 1.5, z: 0.7}
   m_Center: {x: 0, y: 0, z: 0.3}
+--- !u!114 &1201179628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1201179625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e142fc3d6044d8ca983c9a4a91d761, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CatTrigger
+  messageUI: {fileID: 1074145821}
+  messageChat: "Vous avez retrouv\xE9 votre compagnon ! Continuez votre chemin vers
+    l'h\xF4pital."
+  couleurMessage: {r: 1, g: 0.8, b: 0.3, a: 1}
+  dureeMessage: 3
+  messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
+  couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  rotationContinue: 1
+  vitesseRotation: 30
 --- !u!1 &1217071497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1888,6 +1909,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1b488318d0b7d455aad73a70419839ed, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1201179627}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1b488318d0b7d455aad73a70419839ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1201179628}
   m_SourcePrefab: {fileID: 100100000, guid: 1b488318d0b7d455aad73a70419839ed, type: 3}
 --- !u!4 &1593299260 stripped
 Transform:
