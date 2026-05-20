@@ -49,6 +49,8 @@ public class ObstacleMessage : MonoBehaviour
 
     private void AfficherMessage(GameObject objetTouche)
     {
+        if (GoalTrigger.missionTerminee) return;
+
         if (objetTouche.CompareTag("Player"))
         {
             if (messageUI != null)
@@ -56,18 +58,20 @@ public class ObstacleMessage : MonoBehaviour
                 messageUI.text = messageObstacle;
                 messageUI.color = couleurObstacle;
             }
-            
+
             if (manager != null)
             {
                 manager.SignalerCollision();
             }
-            
+
             Debug.Log("Obstacle pédagogique touché : " + gameObject.name);
         }
     }
 
     private void RestaurerMessage()
     {
+        if (GoalTrigger.missionTerminee) return;
+
         if (messageUI != null)
         {
             messageUI.text = messageOriginal;

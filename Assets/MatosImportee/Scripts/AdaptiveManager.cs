@@ -48,6 +48,8 @@ public class AdaptiveManager : MonoBehaviour
 
     void Update()
     {
+        if (GoalTrigger.missionTerminee) return;
+
         tempsDepuisDemarrage += Time.deltaTime;
 
         if (tempsDepuisDemarrage > tempsAvantAjoutDifficulte && nombreCollisions == 0)
@@ -58,6 +60,8 @@ public class AdaptiveManager : MonoBehaviour
 
     public void SignalerCollision()
     {
+        if (GoalTrigger.missionTerminee) return;
+
         nombreCollisions++;
         Debug.Log("Collisions totales : " + nombreCollisions);
 
@@ -103,6 +107,7 @@ public class AdaptiveManager : MonoBehaviour
 
     private void AfficherMessageAdaptatif(string texte)
     {
+        if (GoalTrigger.missionTerminee) return;
         if (messageUI == null) return;
 
         messageUI.text = texte;
@@ -119,6 +124,8 @@ public class AdaptiveManager : MonoBehaviour
     private IEnumerator RetourMessageOriginal()
     {
         yield return new WaitForSeconds(dureeMessageAdaptatif);
+
+        if (GoalTrigger.missionTerminee) yield break;
 
         if (messageUI != null)
         {

@@ -13,7 +13,14 @@ public class GoalTrigger : MonoBehaviour
     [Header("Couleur du message de victoire (vert)")]
     public Color couleurVictoire = new Color(0.3f, 0.9f, 0.3f);
 
+    public static bool missionTerminee = false;
+
     private bool dejaArrive = false;
+
+    void Start()
+    {
+        missionTerminee = false;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -30,6 +37,7 @@ public class GoalTrigger : MonoBehaviour
             }
 
             dejaArrive = true;
+            missionTerminee = true;
         }
     }
 }

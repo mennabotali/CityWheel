@@ -39,6 +39,7 @@ public class CatTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+          if (GoalTrigger.missionTerminee) return;
         if (dejaTrouve) return;
 
         if (other.CompareTag("Player"))
@@ -60,6 +61,7 @@ public class CatTrigger : MonoBehaviour
     private IEnumerator RetourMessageOriginal()
     {
         yield return new WaitForSeconds(dureeMessage);
+        if (GoalTrigger.missionTerminee) yield break;
 
         if (messageUI != null)
         {
