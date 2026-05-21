@@ -50,3 +50,7 @@ Icon
 *.log
 *.bak
 sysinfo.txt
+
+# Unity crash files
+mono_crash.mem.*.blob
+mono_crash.*
