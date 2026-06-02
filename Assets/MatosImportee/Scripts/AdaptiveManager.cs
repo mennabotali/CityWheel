@@ -44,6 +44,7 @@ public class AdaptiveManager : MonoBehaviour
     private Coroutine chaineCoroutine;                       // coroutine de la chaîne d'apparitions
     private Coroutine coroutineMessage;                      // coroutine de retour au message d'origine
 
+    public int CollisionsTotales { get { return nombreCollisions; } }
     void Start()
     {
         tempsDepuisDerniereCollision = 0f;
