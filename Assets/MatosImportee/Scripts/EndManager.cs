@@ -21,6 +21,7 @@ public class EndManager : MonoBehaviour
     void Start()
     {
         if (endPanel != null) endPanel.SetActive(false); // caché tant qu'on n'est pas arrivé
+        PassageMessage.passagesBloques = 0; // réinitialise le compteur de passages bloqués
     }
 
     void Update()
@@ -39,15 +40,16 @@ public class EndManager : MonoBehaviour
         // Récupère les statistiques
         string temps = (chronoText != null) ? chronoText.text : "--:--";
         int obstacles = (adaptiveManager != null) ? adaptiveManager.CollisionsTotales : 0;
+        int passages = PassageMessage.passagesBloques;
 
-        // Construit le message affiché
         if (endText != null)
         {
             endText.text =
-                "MISSION ACCOMPLIE !!!!\n\n" +
+                "MISSION ACCOMPLIE !!!\n\n" +
                 "Vous avez rejoint l'hôpital !!!\n\n" +
                 "Temps : " + temps + "\n" +
-                "Obstacles rencontrés : " + obstacles + "\n\n" +
+                "Obstacles rencontrés : " + obstacles + "\n" +
+                "Passages fermés rencontrés : " + passages + "\n\n" +
                 "Les trottoirs sans rampe, les passages fermés et les détours que vous venez de vivre sont, pour une personne en fauteuil roulant, une réalité quotidienne.";
         }
 

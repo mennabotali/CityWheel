@@ -551,6 +551,7 @@ MonoBehaviour:
   couleurPassage: {r: 1, g: 0.6, b: 0.2, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 0
 --- !u!65 &26722861
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -663,7 +664,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &34737718
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2417,7 +2418,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c313f3d74ab8b4b47a9d94429ea944f5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c313f3d74ab8b4b47a9d94429ea944f5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3038,6 +3039,7 @@ MonoBehaviour:
   couleurPassage: {r: 1, g: 0.6, b: 0.2, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 0
 --- !u!65 &139456036
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4941,6 +4943,7 @@ MonoBehaviour:
   couleurPassage: {r: 0.27450982, g: 0.8113208, b: 0.43529412, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 0
 --- !u!65 &205395351
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5047,6 +5050,7 @@ MonoBehaviour:
   couleurPassage: {r: 1, g: 0.6, b: 0.2, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 1
 --- !u!65 &221648674
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5224,9 +5228,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ApparitionProximite
   distanceApparition: 2
-  message: "Ce passage vient de se fermer.  La voiture est mal gar\xE9. Cherchez
-    un autre chemin."
-  messageUI: {fileID: 1074145821}
+  message: 
+  messageUI: {fileID: 0}
   couleurMessage: {r: 1, g: 0.4, b: 0.9647059, a: 1}
   dureeMessage: 3
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
@@ -5809,6 +5812,7 @@ MonoBehaviour:
   couleurPassage: {r: 1, g: 0.6, b: 0.2, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 1
 --- !u!65 &258733055
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6702,6 +6706,7 @@ MonoBehaviour:
   couleurPassage: {r: 1, g: 0.6, b: 0.2, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 0
 --- !u!65 &321343138
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8211,6 +8216,7 @@ MonoBehaviour:
   couleurPassage: {r: 1, g: 0.6, b: 0.2, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 0
 --- !u!65 &451753120
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8745,6 +8751,7 @@ MonoBehaviour:
   couleurPassage: {r: 0.27450982, g: 0.8113208, b: 0.43529412, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 0
 --- !u!65 &481496205
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10809,6 +10816,7 @@ MonoBehaviour:
   couleurPassage: {r: 1, g: 0.6, b: 0.2, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 0
 --- !u!65 &579555876
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11686,6 +11694,138 @@ MonoBehaviour:
   dureeMessage: 3
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &678796266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 678796267}
+  - component: {fileID: 678796271}
+  - component: {fileID: 678796270}
+  - component: {fileID: 678796269}
+  - component: {fileID: 678796268}
+  m_Layer: 0
+  m_Name: MauvaisPassage2_Zone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &678796267
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678796266}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0151, y: 0.3, z: -0.243}
+  m_LocalScale: {x: 0.010000002, y: 0.01, z: 0.010445029}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1920150898}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &678796268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678796266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8989ee2ed76848de8d3fe9e79586719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PassageMessage
+  messagePassage: "Ce passage vient de se fermer.  La voiture est mal gar\xE9. Cherchez
+    un autre chemin."
+  messageUI: {fileID: 1074145821}
+  couleurPassage: {r: 1, g: 0.4, b: 0.9647059, a: 1}
+  messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
+  couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 1
+--- !u!65 &678796269
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678796266}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &678796270
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678796266}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &678796271
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678796266}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &681800715
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12557,6 +12697,7 @@ MonoBehaviour:
   couleurPassage: {r: 1, g: 0.6, b: 0.2, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 0
 --- !u!65 &713339466
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12971,6 +13112,7 @@ MonoBehaviour:
   couleurPassage: {r: 1, g: 0.6, b: 0.2, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 0
 --- !u!65 &725150422
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15847,6 +15989,7 @@ MonoBehaviour:
   couleurPassage: {r: 1, g: 0.6, b: 0.2, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 0
 --- !u!65 &855642722
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16637,6 +16780,7 @@ MonoBehaviour:
   couleurPassage: {r: 0.27450982, g: 0.8113208, b: 0.43529412, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 0
 --- !u!65 &873095732
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17731,6 +17875,7 @@ MonoBehaviour:
   couleurPassage: {r: 1, g: 0.6, b: 0.2, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 1
 --- !u!65 &917513421
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18145,6 +18290,7 @@ MonoBehaviour:
   couleurPassage: {r: 0.27450982, g: 0.8113208, b: 0.43529412, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 0
 --- !u!65 &936918502
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18784,6 +18930,7 @@ MonoBehaviour:
   couleurPassage: {r: 1, g: 0.6, b: 0.2, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 0
 --- !u!65 &991405169
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19257,6 +19404,7 @@ MonoBehaviour:
   couleurPassage: {r: 1, g: 0.6, b: 0.2, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 0
 --- !u!65 &1064866425
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19955,6 +20103,7 @@ MonoBehaviour:
   couleurPassage: {r: 1, g: 0.6, b: 0.2, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 1
 --- !u!65 &1086558883
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20076,6 +20225,7 @@ MonoBehaviour:
   couleurPassage: {r: 1, g: 0.6, b: 0.2, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 0
 --- !u!65 &1091318144
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20311,7 +20461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 7a10ee5653d124790910340cb3c31c17, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 7a10ee5653d124790910340cb3c31c17, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -20320,6 +20470,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7a10ee5653d124790910340cb3c31c17, type: 3}
       propertyPath: m_Name
       value: PiegeTrottoir3_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7a10ee5653d124790910340cb3c31c17, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21041,6 +21195,7 @@ MonoBehaviour:
   couleurPassage: {r: 1, g: 0.6, b: 0.2, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 0
 --- !u!65 &1163778180
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22840,6 +22995,7 @@ MonoBehaviour:
   couleurPassage: {r: 1, g: 0.6, b: 0.2, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 0
 --- !u!65 &1268716583
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23503,6 +23659,138 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: e0c71be461a694d46a506c9e3238252f, type: 3}
   m_PrefabInstance: {fileID: 1355714557}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1357741106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1357741107}
+  - component: {fileID: 1357741111}
+  - component: {fileID: 1357741110}
+  - component: {fileID: 1357741109}
+  - component: {fileID: 1357741108}
+  m_Layer: 0
+  m_Name: MauvaisPassage1_Zone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1357741107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357741106}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.019, y: 0.3, z: -0.259}
+  m_LocalScale: {x: 0.021245766, y: 0.01, z: 0.005286305}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1387001671}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1357741108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357741106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8989ee2ed76848de8d3fe9e79586719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PassageMessage
+  messagePassage: "Ce passage vient de se fermer.  La voiture est mal gar\xE9. Cherchez
+    un autre chemin."
+  messageUI: {fileID: 1074145821}
+  couleurPassage: {r: 1, g: 0.4, b: 0.9647059, a: 1}
+  messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
+  couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 1
+--- !u!65 &1357741109
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357741106}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1357741110
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357741106}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1357741111
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1357741106}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1360427518
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23921,7 +24209,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: baa48f83c91924bd5b15ced6f2c83640, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1357741107}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: baa48f83c91924bd5b15ced6f2c83640, type: 3}
 --- !u!4 &1387001671 stripped
@@ -24703,6 +24994,7 @@ MonoBehaviour:
   couleurPassage: {r: 0.27450982, g: 0.8113208, b: 0.43529412, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 0
 --- !u!65 &1446735940
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24891,6 +25183,7 @@ MonoBehaviour:
   couleurPassage: {r: 1, g: 0.6, b: 0.2, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 0
 --- !u!65 &1461063664
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25990,6 +26283,7 @@ MonoBehaviour:
   couleurPassage: {r: 0.27171594, g: 0.8113208, b: 0.43393314, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 0
 --- !u!65 &1503677533
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28137,7 +28431,7 @@ PrefabInstance:
       addedObject: {fileID: 1829848712}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6ff54cc695c094ea2a215bdc66011770, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1829848711}
+      addedObject: {fileID: 1829848714}
   m_SourcePrefab: {fileID: 100100000, guid: 6ff54cc695c094ea2a215bdc66011770, type: 3}
 --- !u!1001 &1614582372
 PrefabInstance:
@@ -29755,6 +30049,7 @@ MonoBehaviour:
   couleurPassage: {r: 1, g: 0.6, b: 0.2, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 1
 --- !u!65 &1745700138
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30688,6 +30983,7 @@ MonoBehaviour:
   couleurPassage: {r: 1, g: 0.6, b: 0.2, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 0
 --- !u!65 &1815612740
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30904,26 +31200,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6ff54cc695c094ea2a215bdc66011770, type: 3}
   m_PrefabInstance: {fileID: 1611347823}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1829848711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1829848710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a78ea3d9261a5472b81fed284df6d721, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ApparitionProximite
-  distanceApparition: 2
-  message: "Ce passage vient de se fermer.  La voiture est mal gar\xE9. Cherchez
-    un autre chemin."
-  messageUI: {fileID: 1074145821}
-  couleurMessage: {r: 1, g: 0.4, b: 0.9647059, a: 1}
-  dureeMessage: 3
-  messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
-  couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
 --- !u!65 &1829848712
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30950,6 +31226,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6ff54cc695c094ea2a215bdc66011770, type: 3}
   m_PrefabInstance: {fileID: 1611347823}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1829848714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829848710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78ea3d9261a5472b81fed284df6d721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ApparitionProximite
+  distanceApparition: 2
+  message: 
+  messageUI: {fileID: 0}
+  couleurMessage: {r: 1, g: 0.4, b: 0.9647059, a: 1}
+  dureeMessage: 3
+  messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
+  couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1838328354 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7a10ee5653d124790910340cb3c31c17, type: 3}
@@ -30977,6 +31272,7 @@ MonoBehaviour:
   couleurPassage: {r: 1, g: 0.6, b: 0.2, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 0
 --- !u!65 &1838328357
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31224,6 +31520,7 @@ MonoBehaviour:
   couleurPassage: {r: 1, g: 0.6, b: 0.2, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 1
 --- !u!65 &1850710403
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31689,6 +31986,7 @@ MonoBehaviour:
   couleurPassage: {r: 1, g: 0.6, b: 0.2, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 0
 --- !u!65 &1866753767
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31973,6 +32271,7 @@ MonoBehaviour:
   couleurPassage: {r: 1, g: 0.6, b: 0.2, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 1
 --- !u!65 &1893337887
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32487,7 +32786,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: baa48f83c91924bd5b15ced6f2c83640, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 678796267}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: baa48f83c91924bd5b15ced6f2c83640, type: 3}
 --- !u!4 &1920150898 stripped
@@ -32675,6 +32977,7 @@ MonoBehaviour:
   couleurPassage: {r: 1, g: 0.6, b: 0.2, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 0
 --- !u!65 &1922623340
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32954,6 +33257,7 @@ MonoBehaviour:
   couleurPassage: {r: 1, g: 0.6, b: 0.2, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 0
 --- !u!65 &1956073875
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33345,6 +33649,7 @@ MonoBehaviour:
   couleurPassage: {r: 1, g: 0.6, b: 0.2, a: 1}
   messageOriginal: "Mission : rejoignez l'h\xF4pital par un chemin accessible."
   couleurOriginale: {r: 1, g: 1, b: 1, a: 1}
+  estUnPiege: 0
 --- !u!65 &1978135728
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -33900,7 +34205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c313f3d74ab8b4b47a9d94429ea944f5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c313f3d74ab8b4b47a9d94429ea944f5, type: 3}
       propertyPath: m_LocalPosition.z
