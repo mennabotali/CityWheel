@@ -33,6 +33,9 @@ public class AdaptiveManager : MonoBehaviour
     public Color couleurOriginale = Color.white;
     public Color couleurAdaptation = new Color(1f, 0.7f, 0.2f);
 
+    [Header("Pop-up d'adaptation (COMPRIS)")]
+    public AdaptPopupManager popup;
+
     // ---------- État interne ----------
     private int nombreCollisions = 0;                        // nb d'obstacles CLASSIQUES touchés
     private float tempsDepuisDerniereCollision = 0f;
@@ -118,7 +121,9 @@ public class AdaptiveManager : MonoBehaviour
             if (obs != null) obs.SetActive(false);
 
         Debug.Log("ADAPTATION : parcours facilité — ajout de difficulté désactivé définitivement");
-        AfficherMessageAdaptatif("La ville s'adapte : certains obstacles ont été retirés pour faciliter votre parcours.");
+        
+        if (popup != null)
+        popup.Afficher("La ville s'adapte : certains obstacles ont été retirés pour faciliter votre parcours.");
     }
 
     // === MODE TROP FACILE : apparition EN CHAÎNE, 1 obstacle toutes les "delaiEntreApparitions" ===
