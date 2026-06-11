@@ -19,10 +19,11 @@ public class EndManager : MonoBehaviour
     private bool finAffichee = false;
 
     void Start()
-    {
-        if (endPanel != null) endPanel.SetActive(false); // caché tant qu'on n'est pas arrivé
-        PassageMessage.passagesBloques = 0; // réinitialise le compteur de passages bloqués
-    }
+{
+    if (endPanel != null) endPanel.SetActive(false);
+    PassageMessage.passagesBloques = 0;
+    CheminTrigger.cheminEmprunte = 0;   // AJOUT : remise à zéro
+}
 
     void Update()
     {
@@ -34,30 +35,33 @@ public class EndManager : MonoBehaviour
     }
 
     private void AfficherFin()
+{
+    finAffichee = true;
+    string temps = (chronoText != null) ? chronoText.text : "--:--";
+    int obstacles = (adaptiveManager != null) ? adaptiveManager.CollisionsTotales : 0;
+    int passages = PassageMessage.passagesBloques;
+    int chemin = CheminTrigger.cheminEmprunte;   // AJOUT
+
+    // AJOUT : message de rejouabilité
+    string ligneChemin = (chemin == 0)
+        ? ""
+        : "\n\nVous avez emprunté le chemin " + chemin + " sur 2.\nUn autre chemin accessible existe — rejouez pour le découvrir !";
+
+    if (endText != null)
     {
-        finAffichee = true;
-
-        // Récupère les statistiques
-        string temps = (chronoText != null) ? chronoText.text : "--:--";
-        int obstacles = (adaptiveManager != null) ? adaptiveManager.CollisionsTotales : 0;
-        int passages = PassageMessage.passagesBloques;
-
-        if (endText != null)
-        {
-            endText.text =
-                "MISSION ACCOMPLIE !!!\n\n" +
-                "Vous avez rejoint l'hôpital !!!\n\n" +
-                "Temps : " + temps + "\n" +
-                "Obstacles rencontrés : " + obstacles + "\n" +
-                "Passages fermés rencontrés : " + passages + "\n\n" +
-                "Les trottoirs sans rampe, les passages fermés et les détours que vous venez de vivre sont, pour une personne en fauteuil roulant, une réalité quotidienne.";
-        }
-
-        // Affiche le panneau et met le jeu en pause
-        if (endPanel != null) endPanel.SetActive(true);
-        Time.timeScale = 0f;
+        endText.text =
+            "MISSION ACCOMPLIE\n\n" +
+            "Vous avez rejoint l'hôpital.\n\n" +
+            "Temps : " + temps + "\n" +
+            "Obstacles rencontrés : " + obstacles + "\n" +
+            "Passages fermés rencontrés : " + passages +
+            ligneChemin + "\n\n" +
+            "Les trottoirs sans rampe, les passages fermés et les détours que vous venez de vivre sont, " +
+            "pour une personne en fauteuil roulant, une réalité quotidienne.";
     }
-
+    if (endPanel != null) endPanel.SetActive(true);
+    Time.timeScale = 0f;
+}
     // Appelé par le bouton "Rejouer"
     public void Rejouer()
     {
