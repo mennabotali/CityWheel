@@ -45,7 +45,7 @@ public class EndManager : MonoBehaviour
     // AJOUT : message de rejouabilité
     string ligneChemin = (chemin == 0)
         ? ""
-        : "\n\nVous avez emprunté le chemin " + chemin + " sur 2.\nUn autre chemin accessible existe — rejouez pour le découvrir !";
+        : "\n\nVous avez emprunté le chemin " + chemin + " sur 2.\nUn autre chemin accessible existe, rejouez pour le découvrir !";
 
     if (endText != null)
     {
