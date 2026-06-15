@@ -19,15 +19,14 @@ public class EndManager : MonoBehaviour
     private bool finAffichee = false;
 
     void Start()
-{
-    if (endPanel != null) endPanel.SetActive(false);
-    PassageMessage.passagesBloques = 0;
-    CheminTrigger.cheminEmprunte = 0;   // AJOUT : remise à zéro
-}
+    {
+        if (endPanel != null) endPanel.SetActive(false);
+        PassageMessage.passagesBloques = 0;
+        CheminTrigger.cheminEmprunte = 0;
+    }
 
     void Update()
     {
-        // Quand la mission est terminée, on affiche l'écran de fin une seule fois
         if (GoalTrigger.missionTerminee && !finAffichee)
         {
             AfficherFin();
@@ -35,38 +34,37 @@ public class EndManager : MonoBehaviour
     }
 
     private void AfficherFin()
-{
-    finAffichee = true;
-    string temps = (chronoText != null) ? chronoText.text : "--:--";
-    int obstacles = (adaptiveManager != null) ? adaptiveManager.CollisionsTotales : 0;
-    int passages = PassageMessage.passagesBloques;
-    int chemin = CheminTrigger.cheminEmprunte;   // AJOUT
-
-    // AJOUT : message de rejouabilité
-    string ligneChemin = (chemin == 0)
-        ? ""
-        : "\n\nVous avez emprunté le chemin " + chemin + " sur 2.\nUn autre chemin accessible existe, rejouez pour le découvrir !";
-
-    if (endText != null)
     {
-        endText.text =
-            "MISSION ACCOMPLIE\n\n" +
-            "Vous avez rejoint l'hôpital.\n\n" +
-            "Temps : " + temps + "\n" +
-            "Obstacles rencontrés : " + obstacles + "\n" +
-            "Passages fermés rencontrés : " + passages +
-            ligneChemin + "\n\n" +
-            "Les trottoirs sans rampe, les passages fermés et les détours que vous venez de vivre sont, " +
-            "pour une personne en fauteuil roulant, une réalité quotidienne.";
+        finAffichee = true;
+        string temps = (chronoText != null) ? chronoText.text : "--:--";
+        int obstacles = (adaptiveManager != null) ? adaptiveManager.CollisionsTotales : 0;
+        int passages = PassageMessage.passagesBloques;
+        int chemin = CheminTrigger.cheminEmprunte;
+
+        string ligneChemin = (chemin == 0)
+            ? ""
+            : "\n\nVous avez emprunté le chemin " + chemin + " sur 2.\nUn autre chemin accessible existe, rejouez pour le découvrir !";
+
+        if (endText != null)
+        {
+            endText.text =
+                "MISSION ACCOMPLIE\n\n" +
+                "Vous avez rejoint l'hôpital.\n\n" +
+                "Temps : " + temps + "\n" +
+                "Obstacles rencontrés : " + obstacles + "\n" +
+                "Passages fermés rencontrés : " + passages +
+                ligneChemin + "\n\n" +
+                "Les trottoirs sans rampe, les passages fermés et les détours que vous venez de vivre sont, " +
+                "pour une personne en fauteuil roulant, une réalité quotidienne.";
+        }
+        if (endPanel != null) endPanel.SetActive(true);
+        Time.timeScale = 0f;
     }
-    if (endPanel != null) endPanel.SetActive(true);
-    Time.timeScale = 0f;
-}
-    // Appelé par le bouton "Rejouer"
+
     public void Rejouer()
     {
         Time.timeScale = 1f;
-        GoalTrigger.missionTerminee = false; // on remet le compteur de mission à zéro
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // recharge la scène
+        GoalTrigger.missionTerminee = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

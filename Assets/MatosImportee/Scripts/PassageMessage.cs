@@ -11,7 +11,7 @@ public class PassageMessage : MonoBehaviour
     public TMP_Text messageUI;
 
     [Header("Couleur du message (passage bloqué)")]
-    public Color couleurPassage = new Color(1f, 0.6f, 0.2f); // orange
+    public Color couleurPassage = new Color(1f, 0.6f, 0.2f);
 
     [Header("Message d'origine (quand on s'éloigne)")]
     [TextArea(2, 3)]
@@ -23,10 +23,9 @@ public class PassageMessage : MonoBehaviour
     [Header("Cocher SEULEMENT si c'est un PIÈGE (passage fermé)")]
     public bool estUnPiege = false;
 
-    // Compteur GLOBAL de passages fermés rencontrés (lu par EndManager)
     public static int passagesBloques = 0;
 
-    private bool dejaCompte = false; // pour ne compter ce piège qu'une seule fois
+    private bool dejaCompte = false;
 
     private void OnCollisionEnter(Collision collision) { Afficher(collision.gameObject); }
     private void OnTriggerEnter(Collider other) { Afficher(other.gameObject); }
@@ -50,14 +49,14 @@ public class PassageMessage : MonoBehaviour
             messageUI.color = couleurPassage;
         }
 
-        // Si c'est un piège, on le compte UNE seule fois
         if (estUnPiege && !dejaCompte)
         {
             dejaCompte = true;
             passagesBloques++;
             Debug.Log("Passage fermé rencontré (" + passagesBloques + ") : " + gameObject.name);
         }
-        // Toujours : PAS de SignalerCollision() → un piège ne compte pas comme collision.
+
+        // Volontairement : pas de SignalerCollision() — un piège ne compte jamais comme collision (choix pédagogique)
     }
 
     private void Restaurer()

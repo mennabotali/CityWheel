@@ -3,9 +3,9 @@ using TMPro;
 
 public class AdaptPopupManager : MonoBehaviour
 {
+    [Header("Pop-up d'adaptation (COMPRIS)")]
     public GameObject adaptPanel;
     public TMP_Text adaptText;
-    public AdaptPopupManager popup;
 
     void Start()
     {
@@ -17,12 +17,12 @@ public class AdaptPopupManager : MonoBehaviour
         if (GoalTrigger.missionTerminee) return;
         if (adaptText != null) adaptText.text = texte;
         if (adaptPanel != null) adaptPanel.SetActive(true);
-        Time.timeScale = 0f; // pause
+        Time.timeScale = 0f;
     }
 
     public void Compris()
     {
         if (adaptPanel != null) adaptPanel.SetActive(false);
-        Time.timeScale = 1f; // reprise
+        Time.timeScale = 1f;
     }
 }

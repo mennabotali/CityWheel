@@ -23,7 +23,6 @@ public class WheelchairController : MonoBehaviour
         float avance = 0f;
         float rotation = 0f;
 
-        // Avancer / reculer uniquement avec les touches clavier
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             avance = 1f;
@@ -33,7 +32,6 @@ public class WheelchairController : MonoBehaviour
             avance = -1f;
         }
 
-        // Tourner uniquement avec les touches clavier
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             rotation = 1f;
@@ -46,7 +44,6 @@ public class WheelchairController : MonoBehaviour
         // Empêche le Rigidbody de garder une rotation parasite
         rb.angularVelocity = Vector3.zero;
 
-        // Rotation gauche/droite
         if (rotation != 0f)
         {
             Quaternion rotationDelta = Quaternion.Euler(
@@ -58,7 +55,6 @@ public class WheelchairController : MonoBehaviour
             rb.MoveRotation(rb.rotation * rotationDelta);
         }
 
-        // Avance / recul
         if (avance != 0f)
         {
             Vector3 mouvement = transform.forward * avance * vitesseAvance * Time.fixedDeltaTime;

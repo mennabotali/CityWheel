@@ -30,7 +30,7 @@ public class ApparitionProximite : MonoBehaviour
         renderers = GetComponentsInChildren<Renderer>(true);
         colliders = GetComponentsInChildren<Collider>(true);
 
-        DefinirVisible(false); // caché au départ (invisible + ne bloque pas)
+        DefinirVisible(false);
     }
 
     void Update()

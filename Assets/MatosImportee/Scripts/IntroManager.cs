@@ -8,12 +8,12 @@ public class IntroManager : MonoBehaviour
     void Start()
     {
         if (introPanel != null) introPanel.SetActive(true);
-        Time.timeScale = 0f; // tout est en pause pendant la lecture
+        Time.timeScale = 0f;
     }
 
     public void Commencer()
     {
         if (introPanel != null) introPanel.SetActive(false);
-        Time.timeScale = 1f; // on relance le jeu
+        Time.timeScale = 1f;
     }
 }
